@@ -36,6 +36,15 @@ body{
   background-color: #ece3a5;
   padding: 10px;
   width: 20%;
+
+  .menuButton{
+    width: 100%;
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background-color: #267e01;
+  }
+
 }
 
 .content{
