@@ -5,26 +5,19 @@
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:OPR_development</jdbc-url>
-      <user-name>postgres</user-name>
-      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails OPR: test" uuid="18eaa4c9-a262-458f-816f-5ebda5140d39">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:OPR_test</jdbc-url>
-      <user-name>postgres</user-name>
-      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails OPR: production" uuid="e7d19bdb-cf98-4205-bce9-17485b487327">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:OPR_production</jdbc-url>
-      <user-name>postgres</user-name>
-      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
       <libraries />
     </data-source>
   </component>
 </project>
-

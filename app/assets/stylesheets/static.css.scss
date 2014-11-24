@@ -1,3 +1,45 @@
 .tableClass {
   border: double black thick;
 }
+
+body{
+  padding-top: 138px;
+}
+
+.header{
+  position: absolute;
+  top:0;
+  left:0;
+  background-color: white;
+  padding: 5px;
+  margin: 0px 0px 10px 0px;
+  width: 100%;
+  display: inline-block;
+
+  .headerText{
+    float: left;
+    font-family: Helvetica, Arial, sans-serif;
+    padding-top: 46px;
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+  }
+
+  .headerLogo{
+    float: left;
+  }
+
+}
+
+.menu{
+  float: left;
+  background-color: #ece3a5;
+  padding: 10px;
+  width: 20%;
+}
+
+.content{
+  float: left;
+  width: 75%;
+  margin-left: 20px;
+}
