@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.19'
 
@@ -6,6 +6,7 @@ gem 'rails', '3.2.19'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'haml-rails'
 
 
 # Gems used only for assets and not required
