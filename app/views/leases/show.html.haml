@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Duration:
+  = @lease.duration
+%p
+  %b Monthly fee:
+  = @lease.monthly_fee
+%p
+  %b Property:
+  = @lease.property_id
+%p
+  %b Customer:
+  = @lease.customer_id
+
+= link_to 'Edit', edit_lease_path(@lease)
+\|
+= link_to 'Back', leases_path

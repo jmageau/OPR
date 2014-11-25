@@ -1,0 +1,25 @@
+%h1 Listing leases
+
+%table
+  %tr
+    %th Duration
+    %th Monthly fee
+    %th Property
+    %th Customer
+    %th
+    %th
+    %th
+
+  - @leases.each do |lease|
+    %tr
+      %td= lease.duration
+      %td= lease.monthly_fee
+      %td= lease.property_id
+      %td= lease.customer_id
+      %td= link_to 'Show', lease
+      %td= link_to 'Edit', edit_lease_path(lease)
+      %td= link_to 'Destroy', lease, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Lease', new_lease_path

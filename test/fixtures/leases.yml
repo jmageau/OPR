@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  duration: 1
+  monthly_fee: 9.99
+  property_id: 1
+  customer_id: 1
+
+two:
+  duration: 1
+  monthly_fee: 9.99
+  property_id: 1
+  customer_id: 1

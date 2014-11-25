@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141125233026) do
+ActiveRecord::Schema.define(:version => 20141125234841) do
 
   create_table "advertisements", :force => true do |t|
     t.string   "newspaper_name"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(:version => 20141125233026) do
     t.time     "time"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "leases", :force => true do |t|
+    t.integer  "duration"
+    t.decimal  "monthly_fee", :precision => 10, :scale => 2
+    t.integer  "property_id"
+    t.integer  "customer_id"
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
   end
 
   create_table "subsidiary_agencies", :force => true do |t|

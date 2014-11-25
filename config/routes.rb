@@ -1,4 +1,7 @@
 OPR::Application.routes.draw do
+  resources :leases
+
+
   root to: 'static#home'
 
   resources :users
