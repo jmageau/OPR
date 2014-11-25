@@ -1,4 +1,7 @@
 OPR::Application.routes.draw do
+  resources :subsidiary_agencies
+
+
   resources :visiting_lists
 
 

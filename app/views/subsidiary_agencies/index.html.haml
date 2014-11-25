@@ -1,0 +1,21 @@
+%h1 Listing subsidiary_agencies
+
+%table
+  %tr
+    %th Name
+    %th Location
+    %th
+    %th
+    %th
+
+  - @subsidiary_agencies.each do |subsidiary_agency|
+    %tr
+      %td= subsidiary_agency.name
+      %td= subsidiary_agency.location
+      %td= link_to 'Show', subsidiary_agency
+      %td= link_to 'Edit', edit_subsidiary_agency_path(subsidiary_agency)
+      %td= link_to 'Destroy', subsidiary_agency, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Subsidiary agency', new_subsidiary_agency_path

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @subsidiary_agency.name
+%p
+  %b Location:
+  = @subsidiary_agency.location
+
+= link_to 'Edit', edit_subsidiary_agency_path(@subsidiary_agency)
+\|
+= link_to 'Back', subsidiary_agencies_path
