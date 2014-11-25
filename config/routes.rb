@@ -1,8 +1,8 @@
 OPR::Application.routes.draw do
-  resources :interviews
-
-
   root to: 'static#home'
+
+  resources :users
+  resources :interviews
 
   get '/:page' => 'static#show'
 end
