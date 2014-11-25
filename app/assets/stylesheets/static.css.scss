@@ -1,11 +1,8 @@
-.tableClass {
-  border: double black thick;
-}
-
 body{
   padding-top: 138px;
 }
 
+/* -- HEADER -- */
 .header{
   position: absolute;
   top:0;
@@ -31,6 +28,7 @@ body{
 
 }
 
+/* -- MENU -- */
 .menu{
   float: left;
   background-color: #ece3a5;
@@ -62,8 +60,19 @@ body{
 
 }
 
+/* -- CONTENT -- */
 .content{
   float: left;
   width: 75%;
   margin-left: 20px;
+}
+
+.table{
+  .tableHeader{
+    border: thin;
+    background-color: #dddddd;
+  }
+  .tableCell{
+    border: thin;
+  }
 }
