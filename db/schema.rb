@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(:version => 20141125233026) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "users", :force => true do |t|
+    t.string   "email",            :null => false
+    t.string   "crypted_password", :null => false
+    t.string   "salt",             :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+
   create_table "visiting_lists", :force => true do |t|
     t.integer  "customer_id"
     t.datetime "created_at",  :null => false

@@ -1,17 +1,11 @@
 OPR::Application.routes.draw do
-  resources :subsidiary_agencies
-
-
-  resources :visiting_lists
-
-
-  resources :advertisements
-
-
-  resources :interviews
-
-
   root to: 'static#home'
+
+  resources :users
+  resources :interviews
+  resources :visiting_lists
+  resources :advertisements
+  resources :subsidiary_agencies
 
   get '/:page' => 'static#show'
 end
