@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Customer:
+  = @visiting_list.customer_id
+
+= link_to 'Edit', edit_visiting_list_path(@visiting_list)
+\|
+= link_to 'Back', visiting_lists_path

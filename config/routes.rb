@@ -1,4 +1,7 @@
 OPR::Application.routes.draw do
+  resources :visiting_lists
+
+
   resources :advertisements
 
 
