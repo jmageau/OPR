@@ -39,7 +39,7 @@ body{
 
   .menuTitle{
     text-align: center;
-    font-weight: bold;
+    font-weight: bolder;
     font-family: Helvetica, Arial, sans-serif;
   }
 
@@ -49,6 +49,15 @@ body{
     border-radius: 4px;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     background-color: #267e01;
+    text-decoration: none;
+    padding-left: 1px;
+    padding-right: 1px;
+    display: block;
+    text-align: center;
+    margin: 0px 0px 2px 0px;
+  }
+  .menuButton:hover{
+    background-color: darkgreen;
   }
 
 }
