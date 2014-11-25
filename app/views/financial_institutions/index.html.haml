@@ -1,0 +1,19 @@
+%h1 Listing financial_institutions
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @financial_institutions.each do |financial_institution|
+    %tr
+      %td= financial_institution.name
+      %td= link_to 'Show', financial_institution
+      %td= link_to 'Edit', edit_financial_institution_path(financial_institution)
+      %td= link_to 'Destroy', financial_institution, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Financial institution', new_financial_institution_path

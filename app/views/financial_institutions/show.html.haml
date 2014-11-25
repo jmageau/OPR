@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @financial_institution.name
+
+= link_to 'Edit', edit_financial_institution_path(@financial_institution)
+\|
+= link_to 'Back', financial_institutions_path
