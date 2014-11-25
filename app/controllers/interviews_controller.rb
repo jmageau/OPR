@@ -1,6 +1,4 @@
 class InterviewsController < ApplicationController
-  # GET /interviews
-  # GET /interviews.json
   def index
     @interviews = Interview.all
 
@@ -10,8 +8,6 @@ class InterviewsController < ApplicationController
     end
   end
 
-  # GET /interviews/1
-  # GET /interviews/1.json
   def show
     @interview = Interview.find(params[:id])
 
@@ -21,8 +17,6 @@ class InterviewsController < ApplicationController
     end
   end
 
-  # GET /interviews/new
-  # GET /interviews/new.json
   def new
     @interview = Interview.new
 
@@ -32,13 +26,10 @@ class InterviewsController < ApplicationController
     end
   end
 
-  # GET /interviews/1/edit
   def edit
     @interview = Interview.find(params[:id])
   end
 
-  # POST /interviews
-  # POST /interviews.json
   def create
     @interview = Interview.new(params[:interview])
 
@@ -53,8 +44,6 @@ class InterviewsController < ApplicationController
     end
   end
 
-  # PUT /interviews/1
-  # PUT /interviews/1.json
   def update
     @interview = Interview.find(params[:id])
 
@@ -69,8 +58,6 @@ class InterviewsController < ApplicationController
     end
   end
 
-  # DELETE /interviews/1
-  # DELETE /interviews/1.json
   def destroy
     @interview = Interview.find(params[:id])
     @interview.destroy
