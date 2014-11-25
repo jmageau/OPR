@@ -60,6 +60,7 @@ module OPR
     config.assets.version = '1.0'
 
     config.time_zone = 'EST'
-    ;
+
+    config.assets.initialize_on_precompile = false
   end
 end
