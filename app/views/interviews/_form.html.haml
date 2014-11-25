@@ -8,7 +8,7 @@
 
   .field
     = f.label :date
-    = f.date_select :date
+    = f.date_select :date, start_year: Time.now.year
   .field
     = f.label :time
     = f.time_select :time
