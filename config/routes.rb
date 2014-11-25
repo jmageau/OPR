@@ -1,4 +1,7 @@
 OPR::Application.routes.draw do
+  resources :visitations
+
+
   resources :leases
 
 

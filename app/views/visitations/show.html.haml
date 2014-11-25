@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Date:
+  = @visitation.date
+%p
+  %b Time:
+  = @visitation.time
+%p
+  %b Comments:
+  = @visitation.comments
+%p
+  %b Property:
+  = @visitation.property_id
+
+= link_to 'Edit', edit_visitation_path(@visitation)
+\|
+= link_to 'Back', visitations_path

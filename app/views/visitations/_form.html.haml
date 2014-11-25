@@ -1,0 +1,22 @@
+= form_for @visitation do |f|
+  - if @visitation.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@visitation.errors.count, "error")} prohibited this visitation from being saved:"
+      %ul
+        - @visitation.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :date
+    = f.date_select :date
+  .field
+    = f.label :time
+    = f.time_select :time
+  .field
+    = f.label :comments
+    = f.text_field :comments
+  .field
+    = f.label :property_id
+    = f.number_field :property_id
+  .actions
+    = f.submit 'Save'

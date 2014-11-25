@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141125234841) do
+ActiveRecord::Schema.define(:version => 20141125235154) do
 
   create_table "advertisements", :force => true do |t|
     t.string   "newspaper_name"
@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(:version => 20141125234841) do
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+
+  create_table "visitations", :force => true do |t|
+    t.date     "date"
+    t.time     "time"
+    t.string   "comments"
+    t.integer  "property_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "visiting_lists", :force => true do |t|
     t.integer  "customer_id"

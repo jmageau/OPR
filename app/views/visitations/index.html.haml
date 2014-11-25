@@ -1,0 +1,25 @@
+%h1 Listing visitations
+
+%table
+  %tr
+    %th Date
+    %th Time
+    %th Comments
+    %th Property
+    %th
+    %th
+    %th
+
+  - @visitations.each do |visitation|
+    %tr
+      %td= visitation.date
+      %td= visitation.time
+      %td= visitation.comments
+      %td= visitation.property_id
+      %td= link_to 'Show', visitation
+      %td= link_to 'Edit', edit_visitation_path(visitation)
+      %td= link_to 'Destroy', visitation, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Visitation', new_visitation_path

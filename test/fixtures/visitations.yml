@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2014-11-25
+  time: 2014-11-25 18:51:54
+  comments: MyString
+  property_id: 1
+
+two:
+  date: 2014-11-25
+  time: 2014-11-25 18:51:54
+  comments: MyString
+  property_id: 1
