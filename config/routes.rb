@@ -1,4 +1,7 @@
 OPR::Application.routes.draw do
+  resources :advertisements
+
+
   resources :interviews
 
 
