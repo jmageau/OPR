@@ -1,0 +1,19 @@
+%h1 Listing visiting_lists
+
+%table
+  %tr
+    %th Customer
+    %th
+    %th
+    %th
+
+  - @visiting_lists.each do |visiting_list|
+    %tr
+      %td= visiting_list.customer_id
+      %td= link_to 'Show', visiting_list
+      %td= link_to 'Edit', edit_visiting_list_path(visiting_list)
+      %td= link_to 'Destroy', visiting_list, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Visiting list', new_visiting_list_path

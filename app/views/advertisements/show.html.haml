@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Newspaper name:
+  = @advertisement.newspaper_name
+%p
+  %b Start date:
+  = @advertisement.start_date
+%p
+  %b End date:
+  = @advertisement.end_date
+%p
+  %b Cost:
+  = @advertisement.cost
+%p
+  %b Property ID:
+  = @advertisement.property_id
+
+= link_to 'Edit', edit_advertisement_path(@advertisement)
+\|
+= link_to 'Back', advertisements_path
