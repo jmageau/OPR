@@ -6,5 +6,5 @@ class Property < ActiveRecord::Base
   has_many :leases
   has_many :visitations
   has_and_belongs_to_many :visiting_lists
-  # TODO: has_many :pictures
+  has_many :pictures
 end
