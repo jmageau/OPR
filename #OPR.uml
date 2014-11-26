@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>RailsDependency</ID>
+  <OriginalElement>#OPR</OriginalElement>
+  <nodes>
+    <node x="0.0" y="673.5">FinancialInstitution</node>
+    <node x="213.0" y="651.5">User</node>
+    <node x="860.0" y="452.0">Lease</node>
+    <node x="850.0" y="158.0">Advertisement</node>
+    <node x="390.5" y="510.5">Interview</node>
+    <node x="860.0" y="0.0">Visitation</node>
+    <node x="297.0" y="132.5">Property</node>
+    <node x="876.0" y="338.0">VisitingList</node>
+    <node x="0.0" y="371.0">SubsidiaryAgency</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="SubsidiaryAgency" target="Property">
+      <point x="108.5" y="-29.5" />
+      <point x="-236.5" y="-0.0" />
+    </edge>
+    <edge source="SubsidiaryAgency" target="Interview">
+      <point x="108.5" y="29.5" />
+      <point x="297.0" y="558.5" />
+      <point x="-143.0" y="-0.0" />
+    </edge>
+    <edge source="Property" target="Lease">
+      <point x="236.5" y="126.75" />
+      <point x="-103.0" y="-0.0" />
+    </edge>
+    <edge source="Property" target="Advertisement">
+      <point x="236.5" y="-42.25" />
+      <point x="-113.0" y="-0.0" />
+    </edge>
+    <edge source="FinancialInstitution" target="User">
+      <point x="66.5" y="-0.0" />
+      <point x="-160.5" y="-0.0" />
+    </edge>
+    <edge source="Property" target="Visitation">
+      <point x="236.5" y="-126.75" />
+      <point x="-103.0" y="-0.0" />
+    </edge>
+    <edge source="Property" target="VisitingList">
+      <point x="236.5" y="42.25" />
+      <point x="850.0" y="375.0" />
+      <point x="-87.0" y="-0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="538.0" y="385.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Association fields</Category>
+    <Category>Migration fields</Category>
+  </Categories>
+</Diagram>
+

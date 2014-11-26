@@ -10,5 +10,5 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: true
 
-  has_one :financial_institution
+  belongs_to :financial_institution
 end
