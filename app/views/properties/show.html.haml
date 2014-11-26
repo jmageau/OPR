@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Property type:
+  = @property.property_type
+%p
+  %b Address:
+  = @property.address
+%p
+  %b Location:
+  = @property.location
+%p
+  %b Number of bedrooms:
+  = @property.number_of_bedrooms
+%p
+  %b Number of bathrooms:
+  = @property.number_of_bathrooms
+%p
+  %b Number of other rooms:
+  = @property.number_of_other_rooms
+%p
+  %b Rent:
+  = @property.rent
+%p
+  %b Deletion status:
+  = @property.deletion_status
+%p
+  %b Subsidiary agency:
+  = @property.subsidiary_agency_id
+%p
+  %b Owner:
+  = @property.owner_id
+
+= link_to 'Edit', edit_property_path(@property)
+\|
+= link_to 'Back', properties_path

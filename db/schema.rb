@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141125235804) do
+ActiveRecord::Schema.define(:version => 20141126025633) do
 
   create_table "advertisements", :force => true do |t|
     t.string   "newspaper_name"
@@ -43,6 +43,21 @@ ActiveRecord::Schema.define(:version => 20141125235804) do
     t.integer  "customer_id"
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
+  end
+
+  create_table "properties", :force => true do |t|
+    t.string   "property_type"
+    t.string   "address"
+    t.string   "location"
+    t.integer  "number_of_bedrooms"
+    t.integer  "number_of_bathrooms"
+    t.integer  "number_of_other_rooms"
+    t.decimal  "rent",                  :precision => 10, :scale => 2
+    t.boolean  "deletion_status"
+    t.integer  "subsidiary_agency_id"
+    t.integer  "owner_id"
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
   end
 
   create_table "subsidiary_agencies", :force => true do |t|

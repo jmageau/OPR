@@ -1,0 +1,37 @@
+%h1 Listing properties
+
+%table
+  %tr
+    %th Property type
+    %th Address
+    %th Location
+    %th Number of bedrooms
+    %th Number of bathrooms
+    %th Number of other rooms
+    %th Rent
+    %th Deletion status
+    %th Subsidiary agency
+    %th Owner
+    %th
+    %th
+    %th
+
+  - @properties.each do |property|
+    %tr
+      %td= property.property_type
+      %td= property.address
+      %td= property.location
+      %td= property.number_of_bedrooms
+      %td= property.number_of_bathrooms
+      %td= property.number_of_other_rooms
+      %td= property.rent
+      %td= property.deletion_status
+      %td= property.subsidiary_agency_id
+      %td= property.owner_id
+      %td= link_to 'Show', property
+      %td= link_to 'Edit', edit_property_path(property)
+      %td= link_to 'Destroy', property, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Property', new_property_path
