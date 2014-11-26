@@ -16,3 +16,6 @@
 
 #Ignore .idea config files
 .idea/
+
+#Ignore images
+public/system/pictures/

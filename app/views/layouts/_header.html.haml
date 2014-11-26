@@ -4,6 +4,7 @@
     .headerText Houses of Dreams Store
   .headerUserActions
     - if current_user
+      = current_user.email
       = link_to "Edit Profile", edit_user_path(current_user.id)
       = link_to "Logout", :logout, method: :post
     - else
