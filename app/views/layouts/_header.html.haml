@@ -1,4 +1,10 @@
 .header
-    =link_to(root_path, class:"menuButton") do
-        =image_tag "opr_logo_147x128.png", class:"headerLogo"
-        .headerText Houses of Dreams Store
+  =link_to(root_path, class:"menuButton") do
+    =image_tag "opr_logo_147x128.png", class:"headerLogo"
+    .headerText Houses of Dreams Store
+  .headerUserActions
+    - if current_user
+      = link_to "Edit Profile", edit_user_path(current_user.id)
+      = link_to "Logout", :logout, method: :post
+    - else
+      = link_to "Login", :login
