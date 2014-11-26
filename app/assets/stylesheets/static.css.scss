@@ -66,12 +66,14 @@ body{
   margin-left: 20px;
 }
 
-.table{
-  .tableHeader{
-    border: thin;
+table{
+  border: 1px solid #dddddd;
+  th{
+    border-bottom: 1px solid black;
     background-color: #dddddd;
   }
-  .tableCell{
-    border: thin;
+  td{
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
