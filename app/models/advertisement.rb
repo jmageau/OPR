@@ -5,4 +5,6 @@ class Advertisement < ActiveRecord::Base
   validates :newspaper_name, length: { minimum: 2 }
   validates_with StartDateValidator
   validates_with EndDateValidator
+
+  belongs_to :property
 end

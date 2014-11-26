@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   validates :email, uniqueness: true
+
+  has_one :financial_institution
 end
