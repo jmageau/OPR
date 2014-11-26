@@ -8,7 +8,7 @@ body{
   position: absolute;
   top:0;
   left:0;
-  background-color: white;
+  background-color: #ffffff;
   padding: 5px;
   margin: 0px 0px 10px 0px;
   width: 100%;
@@ -34,10 +34,10 @@ body{
   background-color: #ece3a5;
   padding: 10px;
   width: 200px;
-
   .menuTitle{
     text-align: center;
     font-weight: bolder;
+    display:block;
   }
 
   .menuButton{
@@ -67,10 +67,18 @@ body{
 }
 
 table{
-  border: 1px solid #dddddd;
+  border: 1px solid #015F47;
+  border-collapse: collapse;
   th{
+    color: #ffffff;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
     border-bottom: 1px solid black;
-    background-color: #dddddd;
+    border-right: 1px solid black;
+    background-color: #015F47;
+    &:empty{
+      border-right: none;
+    }
   }
   td{
     padding-left: 6px;
