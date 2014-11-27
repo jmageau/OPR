@@ -3,5 +3,5 @@ class Visitation < ActiveRecord::Base
 
   validates_with DateValidator
   belongs_to :property
-  # TODO: has_many :customers
+  has_and_belongs_to_many :customers
 end

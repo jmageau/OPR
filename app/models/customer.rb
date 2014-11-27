@@ -5,4 +5,5 @@ class Customer < User
   has_many :interviews
   has_one :visiting_list
   has_many :leases
+  has_and_belongs_to_many :visitations
 end
