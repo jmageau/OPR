@@ -1,10 +1,4 @@
 OPR::Application.routes.draw do
-  resources :pictures
-
-
-  resources :properties
-
-
   root to: 'static#home'
 
   resources :users
@@ -19,6 +13,12 @@ OPR::Application.routes.draw do
   resources :financial_institutions
   resources :visitations
   resources :leases
+  resources :pictures
+  resources :properties do
+      get 'index_by_owner', on: :collection
+      get 'owner_add_property', on: :collection
+      get 'mark_as_deleted', on: :member
+  end
 
   get '/:page' => 'static#show'
 end

@@ -4,6 +4,33 @@
   %b Customer:
   = @visiting_list.customer_id
 
+%table
+  %tr
+    %th Property type
+    %th Address
+    %th Location
+    %th Number of bedrooms
+    %th Number of bathrooms
+    %th Number of other rooms
+    %th Rent
+    %th Deletion status
+    %th Subsidiary agency
+    %th Owner
+
+  - @visiting_list.properties.each do |property|
+    %tr
+      %td= property.property_type
+      %td= property.address
+      %td= property.location
+      %td= property.number_of_bedrooms
+      %td= property.number_of_bathrooms
+      %td= property.number_of_other_rooms
+      %td= property.rent
+      %td= property.deletion_status
+      %td= property.subsidiary_agency_id
+      %td= property.owner_id
+
+
 = link_to 'Edit', edit_visiting_list_path(@visiting_list)
 \|
 = link_to 'Back', visiting_lists_path

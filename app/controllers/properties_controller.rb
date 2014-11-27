@@ -81,6 +81,35 @@ class PropertiesController < ApplicationController
     end
   end
 
+
+  def index_by_owner
+    # TODO: Make so that properties are taken from user rather than
+    # by matching ids
+    @properties = Property.where(owner_id: current_user.id)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @properties }
+    end
+  end
+
+  def owner_add_property
+    @property = Property.new
+    @property.owner_id = current_user
+    @property.subsidiary_agency_id = current_user.subsidiary_agency_id
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @property }
+    end
+
+  end
+
+  def mark_as_deleted
+    @property = Property.find(params[:id])
+    @property.update_attribute(deletion_status, true)
+  end
+
   private
 
     # Use this method to whitelist the permissible parameters. Example:
@@ -90,3 +119,4 @@ class PropertiesController < ApplicationController
       params.require(:property).permit(:address, :deletion_status, :location, :number_of_bathrooms, :number_of_bedrooms, :number_of_other_rooms, :owner_id, :property_type, :rent, :subsidiary_agency_id)
     end
 end
+

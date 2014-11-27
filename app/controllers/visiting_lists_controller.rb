@@ -15,6 +15,8 @@ class VisitingListsController < ApplicationController
   def show
     @visiting_list = VisitingList.find(params[:id])
 
+
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @visiting_list }
