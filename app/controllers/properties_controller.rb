@@ -93,6 +93,18 @@ class PropertiesController < ApplicationController
     end
   end
 
+  def owner_add_property
+    @property = Property.new
+    @property.owner_id = current_user
+    @property.subsidiary_agency_id = current_user.subsidiary_agency_id
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @property }
+    end
+
+  end
+
   def mark_as_deleted
     @property = Property.find(params[:id])
     @property.update_attribute(deletion_status, true)

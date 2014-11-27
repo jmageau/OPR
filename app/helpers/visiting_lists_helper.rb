@@ -1,6 +1,6 @@
 module VisitingListsHelper
   def getVisitingList(current_user)
     # TODO: Verify when customer is added
-    @visiting_list = visiting_list_path(current_user.visiting_list)
+    VisitingList.where(customer_id: current_user).first
   end
 end

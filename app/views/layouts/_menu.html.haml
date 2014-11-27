@@ -5,9 +5,9 @@
   %div
     =link_to("Create Account", new_user_path, class:"menuButton")
   %div
-    =link_to("View Visiting List", getVisitingList(current_user), class:"menuButton")
+    =link_to("View Visiting List", visiting_list_path(getVisitingList(current_user)), class:"menuButton")
   %div
-    =link_to("Add Property", new_user_path, class:"menuButton")
+    =link_to("Add Property", owner_add_property_properties_path, class:"menuButton")
   %div
     =link_to("Owner View Properties", index_by_owner_properties_path, class:"menuButton")
   %div

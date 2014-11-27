@@ -1,0 +1,34 @@
+%h1 Add a New Property for Rent
+
+= form_for @property do |f|
+  - if @property.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@property.errors.count, "error")} prohibited this property from being saved:"
+      %ul
+        - @property.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :property_type
+    = f.text_field :property_type
+  .field
+    = f.label :address
+    = f.text_field :address
+  .field
+    = f.label :location
+    = f.text_field :location
+  .field
+    = f.label :number_of_bedrooms
+    = f.number_field :number_of_bedrooms
+  .field
+    = f.label :number_of_bathrooms
+    = f.number_field :number_of_bathrooms
+  .field
+    = f.label :number_of_other_rooms
+    = f.number_field :number_of_other_rooms
+  .field
+    = f.label :rent
+    = f.text_field :rent
+  .actions
+    = f.submit 'Save'
+    = link_to 'Back', properties_path
