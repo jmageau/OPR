@@ -1,14 +1,14 @@
 .menu
   .menuTitle Menu
-  %div
-    =link_to("Administration", "/administration", class:"menuButton")
-  %div
-    =link_to("Create Account", new_user_path, class:"menuButton")
-  %div
-    =link_to("View Visiting List", visiting_list_path(getVisitingList(current_user)), class:"menuButton")
-  %div
-    =link_to("Add Property", owner_add_property_properties_path, class:"menuButton")
-  %div
-    =link_to("Owner View Properties", index_by_owner_properties_path, class:"menuButton")
-  %div
-    =link_to("Search Properties", "", class:"menuButton")
+  - if has_permission(current_user, :administrator)
+    =link_to('Administration', '/administration', class: 'menuButton')
+  - if has_permission(current_user, :agent)
+    =link_to('Create Account', new_user_path, class: 'menuButton')
+  - if has_permission(current_user, :customer)
+    =link_to('View Visiting List', visiting_list_path(getVisitingList(current_user)), class: 'menuButton')
+  - if has_permission(current_user, :owner)
+    =link_to('Add Property', owner_add_property_properties_path, class: 'menuButton')
+  - if has_permission(current_user, :owner)
+    =link_to('Owner View Properties', index_by_owner_properties_path, class: 'menuButton')
+  - if has_permission(current_user, :free)
+    =link_to('Search Properties', '', class: 'menuButton')

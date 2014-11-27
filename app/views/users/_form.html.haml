@@ -15,5 +15,8 @@
   .field
     = f.label :password_confirmation
     = f.password_field :password_confirmation
+  .field
+    = f.label :type
+    = f.select :type, User.subclasses.map(&:name)
   .actions
     = f.submit 'Save'
