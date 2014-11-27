@@ -5,7 +5,7 @@ class SubsidiaryAgency < ActiveRecord::Base
   validates :name, length: { minimum: 2 }
 
   has_many :properties
-  # TODO: has_many :customers
+  has_many :customers
   has_many :interviews
   # TODO: has_one :agency_manager
   # TODO: has_many :agents
