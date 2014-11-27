@@ -3,6 +3,7 @@
 %table
   %tr
     %th Email
+    %th Account Type
     %th
     %th
     %th
@@ -10,6 +11,7 @@
   - @users.each do |user|
     %tr
       %td= user.email
+      %td= user.type
       %td= link_to 'Show', user_path(user)
       %td= link_to 'Edit', edit_user_path(user)
       %td= link_to 'Destroy', user_path(user), :method => :delete, :data => { :confirm => 'Are you sure?' }
