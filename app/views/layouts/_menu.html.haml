@@ -11,4 +11,4 @@
   - if has_permission(current_user, :owner)
     =link_to('Owner View Properties', index_by_owner_properties_path, class: 'menuButton')
   - if has_permission(current_user, :free)
-    =link_to('Search Properties', '', class: 'menuButton')
+    =link_to('Search Properties', search_properties_path, class: 'menuButton')

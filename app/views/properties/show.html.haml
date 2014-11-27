@@ -29,6 +29,7 @@
   %b Owner:
   = @property.owner_id
 
-= link_to 'Edit', edit_property_path(@property)
-\|
-= link_to 'Back', properties_path
+- if has_permission(current_user, :administrator)
+  = link_to 'Edit', edit_property_path(@property)
+  \|
+= link_to 'Back', :back

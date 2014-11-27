@@ -108,6 +108,15 @@ class PropertiesController < ApplicationController
     @property.update_attribute(deletion_status, true)
   end
 
+  def search
+    @properties = Property.all
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @properties }
+    end
+  end
+
   private
 
     # Use this method to whitelist the permissible parameters. Example:

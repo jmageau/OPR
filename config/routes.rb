@@ -18,6 +18,7 @@ OPR::Application.routes.draw do
       get 'index_by_owner', on: :collection
       get 'owner_add_property', on: :collection
       get 'mark_as_deleted', on: :member
+      get 'search', on: :collection
   end
 
   get '/:page' => 'static#show'

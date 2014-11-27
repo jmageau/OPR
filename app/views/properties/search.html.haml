@@ -1,0 +1,60 @@
+%h1 Search Properties
+
+- if @properties.empty?
+  #error_explanation
+    %h2
+      THERE ARE NO PROPERTIES IN THE SYSTEM.
+- else
+
+  .field
+    %label Type:
+    =text_field_tag 'type'
+  %br
+  .field
+    %label Location:
+    =text_field_tag 'location'
+  %br
+  .field
+    %label Number of bedrooms:
+    =number_field_tag 'bedrooms', nil, min: 0
+  %br
+  .field
+    %label Number of bathrooms:
+    =number_field_tag 'bathrooms', nil, min: 0
+  %br
+  .field
+    %label Number of other rooms
+    =number_field_tag 'rooms', nil, min: 0
+  %br
+  .field
+    %label Rent:
+    %br
+    %label Min:
+    =number_field_tag 'minRent', nil, min: 0
+    %br
+    %label Max:
+    =number_field_tag 'maxRent', nil, min: 0
+  %br
+  %br
+
+  %table
+    %tr
+      %th Property type
+      %th Address
+      %th Location
+      %th Number of bedrooms
+      %th Number of bathrooms
+      %th Number of other rooms
+      %th Rent
+      %th
+
+    - @properties.each do |property|
+      %tr#header
+        %td.type= property.property_type
+        %td.address= property.address
+        %td.location= property.location
+        %td.bedrooms= property.number_of_bedrooms
+        %td.bathrooms= property.number_of_bathrooms
+        %td.rooms= property.number_of_other_rooms
+        %td.rent= property.rent
+        %td= link_to 'Show', property
