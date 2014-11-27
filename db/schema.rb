@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141127031121) do
+ActiveRecord::Schema.define(:version => 20141127032348) do
 
   create_table "advertisements", :force => true do |t|
     t.string   "newspaper_name"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20141127031121) do
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.integer  "subsidiary_agency_id"
+    t.integer  "customer_id"
   end
 
   create_table "leases", :force => true do |t|
@@ -89,11 +90,17 @@ ActiveRecord::Schema.define(:version => 20141127031121) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",            :null => false
-    t.string   "crypted_password", :null => false
-    t.string   "salt",             :null => false
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.string   "email",                :null => false
+    t.string   "crypted_password",     :null => false
+    t.string   "salt",                 :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "maximum_rental"
+    t.string   "preferences"
+    t.integer  "subsidiary_agency_id"
+    t.string   "type"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
