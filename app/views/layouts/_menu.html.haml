@@ -5,7 +5,7 @@
   - if has_permission(current_user, :agent)
     =link_to('Create Account', new_user_path, class: 'menuButton')
   - if has_permission(current_user, :customer)
-    =link_to('View Visiting List', visiting_list_path(getVisitingList(current_user)), class: 'menuButton')
+    =link_to('View Visiting List', visiting_list_path(current_user.visiting_list), class: 'menuButton')
   - if has_permission(current_user, :owner)
     =link_to('Add Property', owner_add_property_properties_path, class: 'menuButton')
   - if has_permission(current_user, :owner)
