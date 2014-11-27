@@ -18,5 +18,6 @@
   .field
     = f.label :type
     = f.select :type, User.subclasses.map(&:name)
+  -#  TODO: subclasses does not always show all classes in development mode
   .actions
     = f.submit 'Save'

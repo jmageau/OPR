@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141127032348) do
+ActiveRecord::Schema.define(:version => 20141127062117) do
 
   create_table "advertisements", :force => true do |t|
     t.string   "newspaper_name"
@@ -73,14 +73,10 @@ ActiveRecord::Schema.define(:version => 20141127032348) do
     t.datetime "updated_at",                                           :null => false
   end
 
-  create_table "properties_visiting_lists", :force => true do |t|
-    t.integer  "property_id"
-    t.integer  "visiting_list_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+  create_table "properties_visiting_lists", :id => false, :force => true do |t|
+    t.integer "property_id"
+    t.integer "visiting_list_id"
   end
-
-  add_index "properties_visiting_lists", ["property_id", "visiting_list_id"], :name => "property_id_and_visiting_list_id_index"
 
   create_table "subsidiary_agencies", :force => true do |t|
     t.string   "name"
