@@ -7,6 +7,6 @@ class SubsidiaryAgency < ActiveRecord::Base
   has_many :properties
   has_many :customers
   has_many :interviews
-  # TODO: has_one :agency_manager
-  # TODO: has_many :agents
+  has_one :agency_manager
+  has_many :agents
 end
