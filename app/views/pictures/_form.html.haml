@@ -9,11 +9,14 @@
   .field
     = f.label :description
     = f.text_field :description
+  %br
   .field
     = f.label :image
     = f.file_field :image
+  %br
   .field
     = f.label :property_id
     = f.number_field :property_id
+  %br
   .actions
     = f.submit 'Save'

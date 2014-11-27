@@ -28,6 +28,13 @@ a {
 div {
   &.field, &.actions {
     margin-bottom: 10px;
+    label {
+      width: 100px;
+      float: left;
+      text-align: right;
+      margin-right: 20px;
+      display: block
+    }
   }
 }
 

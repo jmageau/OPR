@@ -9,14 +9,18 @@
   .field
     = f.label :date
     = f.date_select :date
+  %br
   .field
     = f.label :time
     = f.time_select :time
+  %br
   .field
     = f.label :comments
     = f.text_field :comments
+  %br
   .field
     = f.label :property_id
     = f.number_field :property_id
+  %br
   .actions
     = f.submit 'Save'

@@ -9,32 +9,42 @@
   .field
     = f.label :property_type
     = f.text_field :property_type
+  %br
   .field
     = f.label :address
     = f.text_field :address
+  %br
   .field
     = f.label :location
     = f.text_field :location
+  %br
   .field
     = f.label :number_of_bedrooms
     = f.number_field :number_of_bedrooms
+  %br
   .field
     = f.label :number_of_bathrooms
     = f.number_field :number_of_bathrooms
+  %br
   .field
     = f.label :number_of_other_rooms
     = f.number_field :number_of_other_rooms
+  %br
   .field
     = f.label :rent
     = f.text_field :rent
+  %br
   .field
     = f.label :deletion_status
     = f.check_box :deletion_status
+  %br
   .field
     = f.label :subsidiary_agency_id
     = f.number_field :subsidiary_agency_id
+  %br
   .field
     = f.label :owner_id
     = f.number_field :owner_id
+  %br
   .actions
     = f.submit 'Save'

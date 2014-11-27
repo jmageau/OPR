@@ -9,17 +9,22 @@
   .field
     = f.label :newspaper_name
     = f.text_field :newspaper_name
+  %br
   .field
     = f.label :start_date
     = f.date_select :start_date
+  %br
   .field
     = f.label :end_date
     = f.date_select :end_date
+  %br
   .field
     = f.label :cost
     = f.text_field :cost
+  %br
   .field
     = f.label :property_id
     = f.text_field :property_id
+  %br
   .actions
     = f.submit 'Save'
