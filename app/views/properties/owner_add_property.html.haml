@@ -11,24 +11,31 @@
   .field
     = f.label :property_type
     = f.text_field :property_type
+  %br
   .field
     = f.label :address
     = f.text_field :address
+  %br
   .field
     = f.label :location
     = f.text_field :location
+  %br
   .field
     = f.label :number_of_bedrooms
     = f.number_field :number_of_bedrooms
+  %br
   .field
     = f.label :number_of_bathrooms
     = f.number_field :number_of_bathrooms
+  %br
   .field
     = f.label :number_of_other_rooms
     = f.number_field :number_of_other_rooms
+  %br
   .field
     = f.label :rent
     = f.text_field :rent
+  %br
   .actions
     = f.submit 'Save'
     = link_to 'Back', properties_path
