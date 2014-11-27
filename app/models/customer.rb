@@ -4,4 +4,5 @@ class Customer < User
   belongs_to :subsidiary_agency
   has_many :interviews
   has_one :visiting_list
+  has_many :leases
 end

@@ -4,5 +4,5 @@ class Lease < ActiveRecord::Base
   validates :duration, numericality: { greater_than: 0  }
   validates :monthly_fee, format: { with: /^[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?$/, message: "only allows numbers in format X*.YY" }
   belongs_to :property
-  # TODO: has_one :customer
+  belongs_to :customer
 end
