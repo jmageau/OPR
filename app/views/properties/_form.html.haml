@@ -34,17 +34,20 @@
     = f.label :rent
     = f.text_field :rent
   %br
-  .field
-    = f.label :deletion_status
-    = f.check_box :deletion_status
-  %br
-  .field
-    = f.label :subsidiary_agency_id
-    = f.number_field :subsidiary_agency_id
-  %br
-  .field
-    = f.label :owner_id
-    = f.number_field :owner_id
-  %br
+  - if has_permission(current_user, :administrator)
+    .field
+      = f.label :deletion_status
+      = f.check_box :deletion_status
+      %br
+  - if has_permission(current_user, :administrator)
+    .field
+      = f.label :subsidiary_agency_id
+      = f.number_field :subsidiary_agency_id
+      %br
+  - if has_permission(current_user, :administrator)
+    .field
+      = f.label :owner_id
+      = f.number_field :owner_id
+      %br
   .actions
     = f.submit 'Save'

@@ -83,7 +83,7 @@ class PropertiesController < ApplicationController
 
 
   def index_by_owner
-    @properties = current_user.properties
+    @properties = current_user.properties.where(deletion_status: false)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -93,7 +93,7 @@ class PropertiesController < ApplicationController
 
   def owner_add_property
     @property = Property.new
-    @property.owner_id = current_user
+    @property.owner_id = current_user.id
     @property.subsidiary_agency_id = current_user.subsidiary_agency_id
 
     respond_to do |format|
@@ -105,7 +105,9 @@ class PropertiesController < ApplicationController
 
   def mark_as_deleted
     @property = Property.find(params[:id])
-    @property.update_attribute(deletion_status, true)
+    @property.update_attribute(:deletion_status, true)
+
+    redirect_to :back
   end
 
   def search
