@@ -3,6 +3,12 @@
   %div
     =link_to("Administration", "/administration", class:"menuButton")
   %div
-    =link_to("Browse Properties", "", class:"menuButton")
+    =link_to("Create Account", new_user_path, class:"menuButton")
   %div
-    =link_to("Buy Properties", "", class:"menuButton")
+    =link_to("View Visiting List", new_user_path, class:"menuButton")
+  %div
+    =link_to("Add Property", new_user_path, class:"menuButton")
+  %div
+    =link_to("Owner View Properties", index_by_owner_properties_path, class:"menuButton")
+  %div
+    =link_to("Search Properties", "", class:"menuButton")

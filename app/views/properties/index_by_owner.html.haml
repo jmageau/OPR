@@ -1,0 +1,33 @@
+%h1 Your Properties
+
+- if @properties.empty?
+  #error_explanation
+    %h2
+      YOU HAVE NO PROPERTIES.
+- else
+  %table
+    %tr
+      %th Property type
+      %th Address
+      %th Location
+      %th Number of bedrooms
+      %th Number of bathrooms
+      %th Number of other rooms
+      %th Rent
+      %th
+      %th
+      %th
+
+    - @properties.each do |property|
+      %tr
+        %td= property.property_type
+        %td= property.address
+        %td= property.location
+        %td= property.number_of_bedrooms
+        %td= property.number_of_bathrooms
+        %td= property.number_of_other_rooms
+        %td= property.rent
+        %td= link_to 'Show', property
+        %td= link_to 'Edit', edit_property_path(property)
+        %td= link_to 'Destroy', property, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
