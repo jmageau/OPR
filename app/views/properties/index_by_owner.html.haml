@@ -29,5 +29,5 @@
         %td= property.rent
         %td= link_to 'Show', property
         %td= link_to 'Edit', edit_property_path(property)
-        %td= link_to 'Destroy', property, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Delete',mark_as_deleted_property_path(property), :data => { :confirm => 'Are you sure?' }
 

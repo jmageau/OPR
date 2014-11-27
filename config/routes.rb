@@ -16,6 +16,7 @@ OPR::Application.routes.draw do
   resources :pictures
   resources :properties do
       get 'index_by_owner', on: :collection
+      get 'mark_as_deleted', on: :member
   end
 
   get '/:page' => 'static#show'

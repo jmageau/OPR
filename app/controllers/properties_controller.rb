@@ -81,13 +81,21 @@ class PropertiesController < ApplicationController
     end
   end
 
+
   def index_by_owner
+    # TODO: Make so that properties are taken from user rather than
+    # by matching ids
     @properties = Property.where(owner_id: current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @properties }
     end
+  end
+
+  def mark_as_deleted
+    @property = Property.find(params[:id])
+    @property.update_attribute(deletion_status, true)
   end
 
   private
