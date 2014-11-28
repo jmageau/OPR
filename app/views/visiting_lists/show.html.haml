@@ -1,6 +1,6 @@
 %p
-  %b Customer:
-  = @visiting_list.customer_id
+  -#%b Customer:
+  -#= @visiting_list.customer_id
 
 %table
   %tr
@@ -28,7 +28,7 @@
       %td= property.subsidiary_agency_id
       %td= property.owner_id
 
-
-= link_to 'Edit', edit_visiting_list_path(@visiting_list)
-\|
-= link_to 'Back', visiting_lists_path
+-if has_permission(current_user, :administrator)
+  = link_to 'Edit', edit_visiting_list_path(@visiting_list)
+  \|
+= link_to 'Back', :back
