@@ -3,11 +3,11 @@ class Property < ActiveRecord::Base
 
   validates :address, length: { minimum: 2 }
   validates :location, length: { minimum: 2 }
-  validates :number_of_bathrooms, numericality: {only_integer: true, :greater_than_or_equal_to => 0}
-  validates :number_of_bedrooms, numericality: {only_integer: true, :greater_than_or_equal_to => 0}
-  validates :number_of_other_rooms, numericality: {only_integer: true, :greater_than_or_equal_to => 0}
+  validates :number_of_bathrooms, numericality: {only_integer: true, greater_than_or_equal_to: 0}
+  validates :number_of_bedrooms, numericality: {only_integer: true, greater_than_or_equal_to: 0}
+  validates :number_of_other_rooms, numericality: {only_integer: true, greater_than_or_equal_to: 0}
   validates :property_type, length: { minimum: 2 }
-  validates :rent, numericality: {:greater_than_or_equal_to => 0}, format: { with: /^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?$/, message: "only allows numbers in format X*.YY" }
+  validates :rent, numericality: {greater_than_or_equal_to: 0}, format: { with: /^[+-]?[0-9]{1,3}(?:,?[0-9]{3})*(?:\.[0-9]{2})?$/, message: "only allows numbers in format X*.YY" }
 
   belongs_to :subsidiary_agency
   belongs_to :owner
