@@ -36,6 +36,10 @@
     = f.label :rent
     = f.text_field :rent
   %br
+  .field
+    = f.label :pictures
+    = f.file_field :picture, multiple: true
+  %br
     = f.hidden_field :owner_id, value: @property.owner_id
     = f.hidden_field :subsidiary_agency_id, value: @property.subsidiary_agency_id
     = f.hidden_field :deletion_status, value: false

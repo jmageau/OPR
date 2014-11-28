@@ -43,6 +43,10 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
 
     respond_to do |format|
+      params[:property][:picture].each do |picture|
+        p = Picture.create(image: picture)
+        @property.pictures << p
+      end
       if @property.save
         format.html { redirect_to @property, notice: 'Property was successfully created.' }
         format.json { render json: @property, status: :created, location: @property }
@@ -57,8 +61,7 @@ class PropertiesController < ApplicationController
   # PATCH/PUT /properties/1.json
   def update
     @property = Property.find(params[:id])
-    # puts "!!!!!!!!!!!!!!!!!"
-    # puts params[:property][:picture]
+
     respond_to do |format|
       params[:property][:picture].each do |picture|
         p = Picture.create(image: picture)
