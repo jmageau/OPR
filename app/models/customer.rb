@@ -1,5 +1,5 @@
 class Customer < User
-  attr_accessible :maximum_rental, :preferences
+  attr_accessible :maximum_rental, :preferences, :subsidiary_agency_id
 
   belongs_to :subsidiary_agency
   has_many :interviews
