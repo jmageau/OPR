@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141127182523) do
+ActiveRecord::Schema.define(:version => 20141128002537) do
 
   create_table "advertisements", :force => true do |t|
     t.string   "newspaper_name"
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(:version => 20141127182523) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "maximum_rental"
-    t.string   "preferences"
+    t.text     "preferences"
     t.integer  "subsidiary_agency_id"
     t.string   "type"
   end

@@ -1,3 +1,15 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$(document).ready ->
+  unless $("#current_user_type").val() == "Customer"
+    $("#user_preferences").parent().hide()
+    $("#user_maximum_rental").parent().hide()
+
+
+
+  $("#user_type").change ->
+    type = $("#user_type").val()
+    if type == "Customer"
+      $("#user_preferences").parent().show()
+      $("#user_maximum_rental").parent().show()
+    else
+      $("#user_preferences").parent().hide()
+      $("#user_maximum_rental").parent().hide()

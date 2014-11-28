@@ -18,11 +18,40 @@
     = f.label :password_confirmation
     = f.password_field :password_confirmation
   %br
+  - if has_permission(current_user, :administrator)
+    .field
+      = f.label :type
+      = f.select :type, User.subclasses.map(&:name)
+      %br
+  - if has_permission(current_user, :agent)
+    .field
+      = f.label :type
+      = f.select :type, User.subclasses.map(&:name)-["Administrator"]
+      %br
+
   .field
-    = f.label :type
-    = f.select :type, User.subclasses.map(&:name)
-  %br
+    = f.label :first_name
+    = f.text_field :first_name
+    %br
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+    %br
+  .field
+    = f.label :maximum_rental
+    = f.number_field :maximum_rental
+    %br
+  .field
+    = f.label :preferences
+    = f.text_area :preferences
+    %br
+    = f.hidden_field :subsidiary_agency_id, value: @user.subsidiary_agency_id
+
+
+
   -#  TODO: subclasses does not always show all classes in development mode
   -# TODO: move type select to top of page, change visible fields depending on type of user
   .actions
     = f.submit 'Save'
+
+= hidden_field_tag :current_user_type, current_user.type

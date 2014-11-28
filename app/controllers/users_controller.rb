@@ -38,6 +38,10 @@ class UsersController < ApplicationController
         if @user.type == "Customer"
           VisitingList.create(customer_id: @user.id)
         end
+        unless @user.type == "Administrator" || current_user.type == "Administrator"
+          puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!??"
+          @user.update_attribute(:subsidiary_agency_id, current_user.subsidiary_agency_id) if @user.subsidiary_agency_id.nil?
+        end
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else

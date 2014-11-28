@@ -1,5 +1,5 @@
 $(document).ready ->
-  $("input").bind "keyup change", ->
+  $(".properties_search_input").bind "keyup change", ->
     type = $("#type").val().toLowerCase()
     location = $("#location").val().toLowerCase()
     bedrooms = $("#bedrooms").val()

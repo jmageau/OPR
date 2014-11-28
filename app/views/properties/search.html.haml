@@ -8,32 +8,32 @@
 
   .field
     %label Type:
-    =text_field_tag 'type'
+    =text_field_tag 'type', nil, class: "properties_search_input"
   %br
   .field
     %label Location:
-    =text_field_tag 'location'
+    =text_field_tag 'location', nil, class: "properties_search_input"
   %br
   .field
     %label Number of bedrooms:
-    =number_field_tag 'bedrooms', nil, min: 0
+    =number_field_tag 'bedrooms', nil, min: 0, class: "properties_search_input"
   %br
   .field
     %label Number of bathrooms:
-    =number_field_tag 'bathrooms', nil, min: 0
+    =number_field_tag 'bathrooms', nil, min: 0, class: "properties_search_input"
   %br
   .field
     %label Number of other rooms
-    =number_field_tag 'rooms', nil, min: 0
+    =number_field_tag 'rooms', nil, min: 0, class: "properties_search_input"
   %br
   .field
     %label Rent:
     %br
     %label Min:
-    =number_field_tag 'minRent', nil, min: 0
+    =number_field_tag 'minRent', nil, min: 0, class: "properties_search_input"
     %br
     %label Max:
-    =number_field_tag 'maxRent', nil, min: 0
+    =number_field_tag 'maxRent', nil, min: 0, class: "properties_search_input"
   %br
   %br
 
