@@ -29,6 +29,19 @@
   %b Owner:
   = @property.owner_id
 
+%p
+  %b Pictures:
+  %table
+  %tr
+    %th
+
+  - @property.pictures.each do |picture|
+    %tr
+      %td
+        =link_to picture_path(picture) do
+          = image_tag picture.image, class: 'imageThumbnail'
+
+
 - if has_permission(current_user, :customer)
   - unless current_user.visiting_list.properties.include?(@property)
     = link_to 'Add To Visiting List', add_to_visiting_list_property_path(@property)
