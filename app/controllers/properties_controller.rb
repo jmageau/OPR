@@ -110,6 +110,14 @@ class PropertiesController < ApplicationController
     redirect_to :back
   end
 
+  def add_to_visiting_list
+    @property = Property.find(params[:id])
+    unless current_user.visiting_list.properties.include?(@property)
+      current_user.visiting_list.properties << @property
+    end
+    redirect_to :back
+  end
+
   def search
     @properties = Property.all
 

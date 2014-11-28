@@ -35,6 +35,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        if @user.type == "Customer"
+          VisitingList.create(customer_id: @user.id)
+        end
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else

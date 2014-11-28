@@ -29,10 +29,16 @@
   %b Owner:
   = @property.owner_id
 
+- if has_permission(current_user, :customer)
+  - unless current_user.visiting_list.properties.include?(@property)
+    = link_to 'Add To Visiting List', add_to_visiting_list_property_path(@property)
+    \|
+  - else
+    Property is on your visiting list.
+    %br
+
 - if has_permission(current_user, :administrator)
   = link_to 'Edit', edit_property_path(@property)
-\|
-- if has_permission(current_user, :owner)
-  = link_to 'Back', index_by_owner_properties_path
-- else
-  = link_to 'Back', :back
+  \|
+
+= link_to 'Back', :back
