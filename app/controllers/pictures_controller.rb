@@ -87,6 +87,6 @@ class PicturesController < ApplicationController
     # params.require(:person).permit(:name, :age)
     # Also, you can specialize this method with per-user checking of permissible attributes.
     def picture_params
-      params.require(:picture).permit(:description, :image, :property_id)
+      params.require(:picture).permit( :image, :property_id)
     end
 end

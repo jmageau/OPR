@@ -1,14 +1,11 @@
 %p
-  %b Description:
-  = @picture.description
-%p
   %b Image:
   =link_to @picture.image.url do
     = image_tag @picture.image, class: 'imageThumbnail'
 %p
   %b Property:
   = @picture.property_id
-
-= link_to 'Edit', edit_picture_path(@picture)
-\|
+- if has_permission(current_user, :administrator)
+  = link_to 'Edit', edit_picture_path(@picture)
+  \|
 = link_to 'Back', :back

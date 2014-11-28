@@ -2,20 +2,16 @@
 
 %table
   %tr
-    %th Description
     %th Image
-    %th Property
     %th
     %th
     %th
 
   - @pictures.each do |picture|
     %tr
-      %td= picture.description
       %td
         =link_to picture.image.url do
           = image_tag picture.image, class: 'imageThumbnail'
-      %td= picture.property_id
       %td= link_to 'Show', picture
       %td= link_to 'Edit', edit_picture_path(picture)
       %td= link_to 'Destroy', picture, :method => :delete, :data => { :confirm => 'Are you sure?' }

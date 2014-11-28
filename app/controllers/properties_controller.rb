@@ -57,8 +57,13 @@ class PropertiesController < ApplicationController
   # PATCH/PUT /properties/1.json
   def update
     @property = Property.find(params[:id])
-
+    # puts "!!!!!!!!!!!!!!!!!"
+    # puts params[:property][:picture]
     respond_to do |format|
+      params[:property][:picture].each do |picture|
+        p = Picture.create(image: picture)
+        @property.pictures << p
+      end
       if @property.update_attributes(property_params)
         format.html { redirect_to @property, notice: 'Property was successfully updated.' }
         format.json { head :no_content }
@@ -133,7 +138,7 @@ class PropertiesController < ApplicationController
     # params.require(:person).permit(:name, :age)
     # Also, you can specialize this method with per-user checking of permissible attributes.
     def property_params
-      params.require(:property).permit(:address, :deletion_status, :location, :number_of_bathrooms, :number_of_bedrooms, :number_of_other_rooms, :owner_id, :property_type, :rent, :subsidiary_agency_id)
+      params.require(:property).permit(:address, :deletion_status, :location, :number_of_bathrooms, :number_of_bedrooms, :number_of_other_rooms, :owner_id, :property_type, :rent, :subsidiary_agency_id, :picture)
     end
 end
 
