@@ -26,6 +26,7 @@
   - if has_permission(current_user, :agent)
     .field
       = f.label :type
+      -# subclasses does not always show all classes in development mode
       = f.select :type, User.subclasses.map(&:name)-["Administrator"]
       %br
 
@@ -47,9 +48,6 @@
     %br
     = f.hidden_field :subsidiary_agency_id, value: @user.subsidiary_agency_id
 
-
-
-  -#  TODO: subclasses does not always show all classes in development mode
   .actions
     = f.submit 'Save'
 
