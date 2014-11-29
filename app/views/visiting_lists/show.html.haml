@@ -14,6 +14,7 @@
     %th Deletion status
     %th Subsidiary agency
     %th Owner
+    %th
 
   - @visiting_list.properties.each do |property|
     %tr
@@ -27,6 +28,7 @@
       %td= property.deletion_status
       %td= property.subsidiary_agency_id
       %td= property.owner_id
+      %td= link_to 'Remove',  remove_from_visiting_list_path(@visiting_list, property), :data => { :confirm => 'Are you sure?' }
 
 -if has_permission(current_user, :administrator)
   = link_to 'Edit', edit_visiting_list_path(@visiting_list)

@@ -82,4 +82,12 @@ class VisitingListsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def remove_from_visiting_list
+    @visiting_list = VisitingList.find(params[:id])
+    @property = Property.find(params[:property])
+
+    @visiting_list.properties.delete(@property)
+    redirect_to :back
+  end
 end

@@ -8,6 +8,8 @@ OPR::Application.routes.draw do
 
   resources :interviews
   resources :visiting_lists
+  get '/visiting_lists/:id/remove_from_visiting_list/:property' => "visiting_lists#remove_from_visiting_list", as: :remove_from_visiting_list
+
   resources :advertisements
   resources :subsidiary_agencies
   resources :financial_institutions
