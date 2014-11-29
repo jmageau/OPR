@@ -6,9 +6,9 @@ sa2 = SubsidiaryAgency.create(name: "agency 2", location: "Toronto")
 am1 = AgencyManager.create(email: "agencyManager1@email.com", password: "pass", password_confirmation: "pass", subsidiary_agency_id: sa1.id)
 am2 = AgencyManager.create(email: "agencyManager2@email.com", password: "pass", password_confirmation: "pass", subsidiary_agency_id: sa2.id)
 
-c1 = Customer.create(email: "customer1@email.com", password: "pass", password_confirmation: "pass", subsidiary_agency_id: sa1.id)
-c2 = Customer.create(email: "customer2@email.com", password: "pass", password_confirmation: "pass", subsidiary_agency_id: sa1.id)
-c3 = Customer.create(email: "customer3@email.com", password: "pass", password_confirmation: "pass", subsidiary_agency_id: sa2.id)
+c1 = Customer.create(email: "customer1@email.com", password: "pass", password_confirmation: "pass", subsidiary_agency_id: sa1.id, maximum_rental: 1000)
+c2 = Customer.create(email: "customer2@email.com", password: "pass", password_confirmation: "pass", subsidiary_agency_id: sa1.id, maximum_rental: 2000)
+c3 = Customer.create(email: "customer3@email.com", password: "pass", password_confirmation: "pass", subsidiary_agency_id: sa2.id, maximum_rental: 3000)
 
 VisitingList.create(customer_id: c1.id)
 VisitingList.create(customer_id: c2.id)
