@@ -63,9 +63,11 @@ class PropertiesController < ApplicationController
     @property = Property.find(params[:id])
 
     respond_to do |format|
-      params[:property][:picture].each do |picture|
-        p = Picture.create(image: picture)
-        @property.pictures << p
+      if params[:property][:picture]
+        params[:property][:picture].each do |picture|
+          p = Picture.create(image: picture)
+          @property.pictures << p
+        end
       end
       if @property.update_attributes(property_params)
         format.html { redirect_to @property, notice: 'Property was successfully updated.' }

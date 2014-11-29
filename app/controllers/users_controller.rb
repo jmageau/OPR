@@ -39,7 +39,6 @@ class UsersController < ApplicationController
           VisitingList.create(customer_id: @user.id)
         end
         unless @user.type == "Administrator" || current_user.type == "Administrator"
-          puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!??"
           @user.update_attribute(:subsidiary_agency_id, current_user.subsidiary_agency_id) if @user.subsidiary_agency_id.nil?
         end
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -77,7 +76,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, :type)
+    params.require(:user).permit(:email, :password, :password_confirmation, :type, :first_name, :last_name, :preferences, :maximum_rental)
   end
 
 end
