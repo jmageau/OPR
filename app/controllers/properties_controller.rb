@@ -107,6 +107,7 @@ class PropertiesController < ApplicationController
     @property = Property.new
     @property.owner_id = current_user.id
     @property.subsidiary_agency_id = current_user.subsidiary_agency_id
+    @property.deletion_status = false
 
     respond_to do |format|
       format.html # new.html.erb
@@ -131,7 +132,7 @@ class PropertiesController < ApplicationController
   end
 
   def search
-    @properties = Property.all
+    @properties = Property.where(deletion_status: false)
 
     respond_to do |format|
       format.html # new.html.erb

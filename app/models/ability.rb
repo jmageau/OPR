@@ -13,10 +13,10 @@ class Ability
     if user.is?('Administrator')
       can :manage, :all
     elsif user.is?('Owner')
-      can :manage, Property
+      can :manage, Property, owner_id: user.id
       cannot :index, :all
     elsif user.is?('Customer')
-      can :manage, VisitingList
+      can :manage, VisitingList, customer_id: user.id
       can :add_to_visiting_list, Property
       cannot :index, :all
     elsif user.is?('Agent')
