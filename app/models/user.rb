@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
 
   belongs_to :financial_institution
+
+  def is? (role)
+    self.type == role.to_s
+  end
 end

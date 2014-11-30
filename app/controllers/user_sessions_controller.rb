@@ -1,4 +1,6 @@
 class UserSessionsController < ApplicationController
+  skip_authorize_resource
+
   def new
     @user = User.new
   end

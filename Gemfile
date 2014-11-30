@@ -8,10 +8,12 @@ gem 'rails', '3.2.19'
 gem 'pg'
 gem 'haml-rails'
 
-gem 'sorcery';
+gem 'sorcery'
 gem 'strong_parameters'
 
 gem 'paperclip'
+
+gem 'cancancan'
 
 
 # Gems used only for assets and not required
