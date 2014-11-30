@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
     user ||= User.new
 
-    can [:edit, :update, :destroy], User, id: user.id
+    can [:show, :edit, :update, :destroy], User, id: user.id
 
     can :home, :static
     cannot :administration, :static
