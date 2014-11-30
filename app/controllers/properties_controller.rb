@@ -43,9 +43,11 @@ class PropertiesController < ApplicationController
     @property = Property.new(property_params)
 
     respond_to do |format|
-      params[:property][:picture].each do |picture|
-        p = Picture.create(image: picture)
-        @property.pictures << p
+      if params[:property][:picture]
+        params[:property][:picture].each do |picture|
+          p = Picture.create(image: picture)
+          @property.pictures << p
+        end
       end
       if @property.save
         format.html { redirect_to @property, notice: 'Property was successfully created.' }
