@@ -12,7 +12,7 @@
   %br
   .field
     %label Location:
-    =select_tag 'location', options_for_select(Property.all.map(&:location).uniq), include_blank: true, class: "properties_search_input"
+    =select_tag 'location', options_for_select(Property.where(deletion_status: false).map(&:location).uniq), include_blank: true, class: "properties_search_input"
   %br
   .field
     %label Number of bedrooms:
